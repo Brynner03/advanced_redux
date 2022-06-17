@@ -18,22 +18,6 @@ function App() {
 
   useEffect(() => {
     const sendCartData = async () => {
-      dispatch(uiActions.showNotification({
-        status: 'pending',
-        title: 'Sending',
-        message: 'Sending cart data!'
-      }))
-      const response = await fetch(
-        'https://redux-practice-8e7e6-default-rtdb.firebaseio.com/cart.json',
-        { 
-          method: 'PUT', 
-          body: JSON.stringify(cart),
-        }
-      )
-
-      if (!response.ok) {
-        throw new Error('Sending cart failed..')
-      }
 
       dispatch(uiActions.showNotification({
         status: 'success',
